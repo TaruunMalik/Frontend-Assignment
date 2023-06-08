@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag & Drop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,600&family=Playfair:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,400;1,500;1,600&family=Public+Sans:wght@100;200;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!-- PARENT CONTAINER -->
+    <div class="bigContainer">
+      <!-- FORM  -->
+      <div class="form-container">
+        <h3>Input Field</h3>
+        <div class="field-cont">
+          <label for="taskDetails" class="form-label">Task Details</label>
+          <input
+            type="text"
+            class="form-control"
+            id="taskDetails"
+            placeholder="Enter task details"
+          />
+        </div>
+        <div class="field-cont">
+          <label for="projectName" class="form-label">Project Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="projectName"
+            placeholder="Enter project name"
+          />
+        </div>
+        <div class="btnCont">
+          <button onclick="addNewTask()" class="btn">Add Task</button>
+          <button onclick="resetContainers()" class="btn">
+            Reset Progress
+          </button>
+        </div>
+      </div>
+      <!-- TASK CONTAINERS -->
+      <div class="container">
+        <!-- TO DO TASKS CONTAINER -->
+        <div
+          id="todo"
+          class="left-cont"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <h2>Tasks to do :</h2>
+          <div
+            id="todotarget1"
+            ondragstart="dragStart(event)"
+            draggable="true"
+            class="list"
+          >
+            <p class="details">Details of Task 1</p>
+            <p class="project-name">Project X</p>
+          </div>
+          <div
+            id="todotarget2"
+            ondragstart="dragStart(event)"
+            draggable="true"
+            class="list"
+          >
+            <p class="details">Details of Task 1</p>
+            <p class="project-name">Project X</p>
+          </div>
+          <div
+            id="todotarget3"
+            ondragstart="dragStart(event)"
+            draggable="true"
+            class="list"
+          >
+            <p class="details">Details of Task 1</p>
+            <p class="project-name">Project X</p>
+          </div>
+        </div>
+        <!-- ONGOING TASKS CONTAINER -->
+        <div
+          id="progress"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+          class="right-cont"
+        >
+          <h2>Tasks in progress:</h2>
+
+          <div
+            id="inprogresstarget1"
+            ondragstart="dragStart(event)"
+            draggable="true"
+            class="list"
+          >
+            <p class="details">Details of Task 1</p>
+            <p class="project-name">Project X</p>
+          </div>
+          <div
+            id="inprogresstarget2"
+            ondragstart="dragStart(event)"
+            draggable="true"
+            class="list"
+          >
+            <p class="details">Details of Task 1</p>
+            <p class="project-name">Project X</p>
+          </div>
+          <div
+            id="inprogresstarget3"
+            ondragstart="dragStart(event)"
+            draggable="true"
+            class="list"
+          >
+            <p class="details">Details of Task 1</p>
+            <p class="project-name">Project X</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
